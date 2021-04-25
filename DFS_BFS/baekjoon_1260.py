@@ -17,7 +17,8 @@ def dfs():
     for i in range(1, n+1):
         if(visited[i] == 0 and matrix[v][i] == 1):
             dfs(v)
-            
+
+        
 
 def bfs(v):
     queue = deque([v])
@@ -25,7 +26,7 @@ def bfs(v):
     while queue:
         v = queue.popleft()
         print(v, end=' ')
-        for i in range(1 n+1):
+        for i in range(1, n+1):
             if(visited[i] == 1 and matrix[v][i] == 1):
                 queue.append(i)
                 visited[i] = 0
