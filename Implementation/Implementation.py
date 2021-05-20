@@ -9,26 +9,24 @@ D : down
 둘째줄에는 이동할 방향의 내용이 주어진다.
 최종 도착할 지점의 좌표를 공백으로 구분해서 출력하여라
 """
+
 n = int(input())
-x, y, nx, ny = 1, 1, 1, 1
+x, y = 1, 1
 plans = input().split()
 
+# L R U D에 맞는 방향 설정
 dx = [0, 0, -1, 1]
 dy = [-1, 1, 0, 0]
-
 move_types = ['L', 'R', 'U', 'D']
+
+# 이동 계획 확인
 for plan in plans:
-    
-    for index, value in enumerate(move_types):
-        if plan == value:
-            nx = x + dx[index]
-            ny = y + dy[index]
-            print('x : ', x)
-            print('y : ', y)
+    for i in range(len(move_types)):
+        if plan == move_types[i]:
+            nx = x + dx[i]
+            ny = y + dy[i]
     if nx < 1 or ny < 1 or nx > n or ny > n:
         continue
-    x = nx
-    y = ny
-
+    x, y = nx, ny
 
 print(x, y)
