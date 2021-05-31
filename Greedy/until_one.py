@@ -14,13 +14,16 @@ N과 K가 주어질 때 N이 1이 될 때까지 1번 혹은 2번의 과정을 �
 n, k = map(int, input().split())
 result = 0
 
-while n >= k:
-    while n % k != 0:
-        n -= 1
-        result += 1
+while True:
+    target = (n // k) * k
+    result += (n - target)
+    n = target
+    # N이 K보다 작을 때 반복문 탈출
+    if n < k:
+        break
     result += 1
+    print('n //= k', )
+    n //= k
 
-while n > 1:
-    n -= 1
-    result += 1
+result += (n - 1)
 print(result)
